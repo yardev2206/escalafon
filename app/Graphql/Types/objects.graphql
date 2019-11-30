@@ -1,0 +1,104 @@
+
+""" tipo work """
+type Work {
+    id: ID
+    fecha_de_inicio: String!
+    fecha_de_cese: String!
+    persona_id: ID!
+    planilla_id: ID!
+    cargo_id: ID!
+    categoria_id: ID!
+    prefijo: String
+    perfil: String
+    fecha_inicio_licencia: String
+    fecha_fin_licencia: String
+    resolucion: String!
+    email: String
+    plaza_id: ID
+    type_contrato_id: ID!
+    orden: String!
+    """ Relaciones del objecto """
+    plaza: Plaza
+    grados: [Grado]
+    type_contrato: TypeContrato
+    experiencias: [Experiencia]
+    investigaciones: [Investigacion]
+}
+
+
+""" tipo grado """
+type Grado {
+    id: ID!
+    work_id: ID!
+    persona_id: ID!
+    type_grado: String!
+    centro_de_estudio: String!
+    titulo: String!
+    descripcion: String
+    fecha_de_inicio: String!
+    fecha_de_cese: String!
+    """ Relaciones """
+    work: Work!
+}
+
+
+""" tipo plaza """
+type Plaza {
+    id: ID!
+    facultad_id: ID
+    resolucion: String!
+    activo: Boolean!
+    """ Relaciones """
+    works: [Work]
+}
+
+
+""" tipo de contrato """
+type TypeContrato {
+    id: ID!
+    descripcion: String!
+    """ Relaciones """
+    works: [Work]
+}
+
+
+""" tipo experiencia """
+type Experiencia {
+    id: ID!
+    work_id: ID!
+    persona_id: ID!
+    descripcion: String!
+    fecha_de_inicio: String!
+    fecha_de_cese: String!
+    direccion: String
+    """ Relaciones """
+    work: Work!
+}
+
+
+""" tipo de investigación """
+type Investigacion {
+    id: ID!
+    work_id: ID!
+    persona_id: ID!
+    titulo: String!
+    descripcion: String!
+    fecha_de_inicio: String!
+    fecha_de_fin: String!
+    """ Relaciones """
+    work: Work!
+}
+
+
+""" tipo file """
+type File {
+    id: ID!
+    type_model: String
+    type_id: ID!
+    type_file: String!
+    mime: String!
+    path: String!
+    data: String
+}
+
+

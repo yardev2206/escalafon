@@ -1,0 +1,15 @@
+# importaciones
+# import * from "objects.graphql"
+# import * from "inputs.graphql"
+# import * from "responses.graphql"
+
+type Query {
+    """ listar works activos """
+    getWorks: WorksResponse
+}
+
+
+type Mutation {
+    """ crear nuevo trabajador """
+    createWork(input: inputCreateWork): Response
+}

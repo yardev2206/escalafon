@@ -1,0 +1,15 @@
+
+input inputCreateWork {
+    fecha_de_inicio: String!
+    fecha_de_cese: String!
+    persona_id: ID!
+    planilla_id: ID!
+    cargo_id: ID!
+    categoria_id: ID!
+    prefijo: String
+    perfil: String!
+    resolucion: String!
+    email: String
+    plaza_id: ID
+    type_contrato_id: ID!
+}
